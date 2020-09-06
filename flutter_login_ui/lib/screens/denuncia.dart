@@ -8,6 +8,8 @@ class DenunciaScreen extends StatefulWidget {
 }
 
 class _DenunciaScreenState extends State<DenunciaScreen> {
+  final List<String> items = <String>['Mascarilla', 'Fiesta'];
+  String selectedItem = 'Fiesta';
   Widget _buildTituloTF() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,30 +50,30 @@ class _DenunciaScreenState extends State<DenunciaScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Tipo',
+          'Tipo De Denuncia',
           style: kLabelStyle,
         ),
         SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: kBoxDecorationStyle,
           height: 60.0,
-          child: TextField(
-            obscureText: true,
-            style: TextStyle(
-              color: Colors.white,
-              fontFamily: 'OpenSans',
-            ),
-            decoration: InputDecoration(
-              border: InputBorder.none,
-              contentPadding: EdgeInsets.only(top: 14.0),
-              prefixIcon: Icon(
-                Icons.lock,
-                color: Colors.white,
-              ),
-              hintText: 'Ingresa el tipo de denuncia',
-              hintStyle: kHintTextStyle,
-            ),
+          child: DropdownButton<String>(
+            value: selectedItem,
+            onChanged: (String string) => setState(() => selectedItem = string),
+            selectedItemBuilder: (BuildContext context) {
+              return items.map<Widget>((String item) {
+                return Text(item);
+              }).toList();
+            },
+            items: items.map((String item) {
+              return DropdownMenuItem<String>(
+                child: Text(
+                  '$item',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                value: item,
+              );
+            }).toList(),
           ),
         ),
       ],
@@ -83,7 +85,7 @@ class _DenunciaScreenState extends State<DenunciaScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Descripcion',
+          'Descripción',
           style: kLabelStyle,
         ),
         SizedBox(height: 10.0),
@@ -92,7 +94,7 @@ class _DenunciaScreenState extends State<DenunciaScreen> {
           decoration: kBoxDecorationStyle,
           height: 60.0,
           child: TextField(
-            obscureText: true,
+            keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.white,
               fontFamily: 'OpenSans',
@@ -101,10 +103,10 @@ class _DenunciaScreenState extends State<DenunciaScreen> {
               border: InputBorder.none,
               contentPadding: EdgeInsets.only(top: 14.0),
               prefixIcon: Icon(
-                Icons.lock,
+                Icons.email,
                 color: Colors.white,
               ),
-              hintText: 'Ingresa una Descripcion',
+              hintText: 'Ingrese una Descripción ',
               hintStyle: kHintTextStyle,
             ),
           ),
@@ -126,7 +128,7 @@ class _DenunciaScreenState extends State<DenunciaScreen> {
         ),
         color: Colors.white,
         child: Text(
-          'Imagen',
+          'Agregar Imagen (Opcional)',
           style: TextStyle(
             color: Color(0xFF527DAA),
             letterSpacing: 1.5,
