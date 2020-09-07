@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_login_ui/screens/ubicacion.dart';
 import 'package:flutter_login_ui/utilities/constants.dart';
 
 class DenunciaScreen extends StatefulWidget {
@@ -121,7 +122,14 @@ class _DenunciaScreenState extends State<DenunciaScreen> {
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: () => print('Imagen Button Pressed'),
+        //onPressed: () => print('Imagen Button Pressed'),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => MapSample()),
+          );
+        },
+
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),

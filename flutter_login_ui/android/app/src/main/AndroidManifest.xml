@@ -10,6 +10,10 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="flutter_login_ui"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:name="com.google.android.maps.v2.API_KEY"
+               android:value="AIzaSyDCPqnJNGkMcrlxG0Y3mGi-IEZE0QLtKj8"/>
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
@@ -31,3 +35,8 @@
         </activity>
     </application>
 </manifest>
+
+
+
+
+
