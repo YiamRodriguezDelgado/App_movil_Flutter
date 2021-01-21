@@ -1,5 +1,5 @@
 # Ejecución del Server
-
+node server.js 
 ## Paquete necesarios para correr server
 ## Express
 npm install express
