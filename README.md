@@ -13,3 +13,5 @@ npm install cors
 -El mapa de leaflet ya tiene el token de autorizacion.
 
 -Por alguna razon todas las ubicaciones estan en la antartida.
+
+- Abrir el archivo index.html para visulizar las ubicaciones de los usuarios
