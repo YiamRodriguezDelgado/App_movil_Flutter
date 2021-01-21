@@ -8,7 +8,7 @@ npm install mongodb
 ## Cors
 npm install cors
 ## Notas
--La coleccion de mongodb esta subido en un cluster asi q no es necesario correr mongodb localmente.
+-La coleccion de mongodb esta subido en un cluster asi que no es necesario correr mongodb localmente.
 
 -El mapa de leaflet ya tiene el token de autorizacion.
 
